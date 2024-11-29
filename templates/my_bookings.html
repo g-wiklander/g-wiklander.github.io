@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Mina Bokningar</title>
+</head>
+<body>
+    <h1>Mina Bokningar</h1>
+    <form action="/my_bookings" method="post">
+        Ange din e-post för att se dina bokningar: <input type="email" name="email" required>
+        <button type="submit">Visa Bokningar</button>
+    </form>
+    {% if bookings %}
+    <ul>
+        {% for booking in bookings %}
+        <li>{{ booking }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
